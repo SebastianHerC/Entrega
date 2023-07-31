@@ -1,0 +1,34 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    Terrenos
+{% endblock titulo %}
+
+{% block cabecera %}
+    Terrenos
+{% endblock cabecera %}
+
+{% block contenido %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id.</th>
+            <th>Ubicacion</th>
+            <th>Metros</th>
+            <th>Valor</th>
+        </tr>
+    </thead>
+    <tbody>  
+    {% for terreno in Terrenos %}
+    <tr>
+        <td>{{ terreno.id }}</td>
+        <td>{{ terreno.ubicacion }}</td>
+        <td>{{ terreno.metro }}</td>
+        <td>{{ terreno.valor }}</td>
+    </tr>    
+    {% endfor %}
+    
+    </tbody>
+</table>
+{% endblock contenido %}

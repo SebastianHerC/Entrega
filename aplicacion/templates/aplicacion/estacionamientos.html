@@ -1,0 +1,41 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+
+{% block titulo %}
+    Estacionamientos
+{% endblock titulo %}
+    
+
+{% block cabecera %}
+    Estacionamientos
+{% endblock cabecera %}
+    
+
+
+{% block contenido %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id.</th>
+            <th>Ubicacion</th>
+            <th>Valor</th>
+        </tr>
+    </thead>
+    <tbody>  
+
+    {% for estacionamiento in Estacionamientos %}
+    <tr>
+        <td>{{ estacionamiento.id }}</td>
+        <td>{{estacionamiento.ubicacion}}</td>
+        <td>{{estacionamiento.valor}}</td>
+    </tr>    
+    {% endfor %}
+
+    </tbody>
+</table>
+{% endblock contenido %}
+
+
+
+

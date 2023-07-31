@@ -1,0 +1,37 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    Resultados de búqueda
+{% endblock titulo %}
+
+{% block cabecera %}
+Deptos {{ Ubicacion }}
+{% endblock cabecera %}
+
+
+{% block contenido %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id.</th>
+            <th>Ubicacion</th>
+            <th>Piezas</th>
+            <th>Metros 2</th>
+            <th>Valor</th>
+        </tr>
+    </thead>
+    <tbody>  
+       
+    {% for departamento in departamentos %}
+    <tr>
+        <td>{{ departamento.id }}</td>
+        <td>{{ departamento.ubicacion }}</td>
+        <td>{{ departamento.piezas }}</td>
+        <td>{{ departamento.metros2 }}</td>
+        <td>{{ departamento.valor }}</td>
+    </tr>    
+        
+    {% endfor %}
+
+{% endblock contenido %}
